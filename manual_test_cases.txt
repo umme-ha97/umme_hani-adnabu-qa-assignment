@@ -1,0 +1,96 @@
+Functionality: Product Search and Add to Cart
+
+1. Title: Valid Product Search(positive)
+
+Preconditions:
+* User should be logged into adnabu store
+* User is on adnabu store homepage
+
+Steps:
+When User clicks on search icon
+And User enters valid product name "Multi-location Snowboard" in the search bar
+
+Expected:
+Then product "Multi-location Snowboard" appears in the search list
+
+=============================================================================================================
+2. Title: Clear search functionality (positive)
+
+Preconditions:
+* User should be logged into adnabu store
+* User is on adnabu store homepage
+
+Steps:
+When User clicks on search icon
+And User enters valid product name "Multi-location Snowboard" in the search bar
+Then user clicks on cross icon "X"
+
+Expected:
+The search field should be cleared
+
+=============================================================================================================
+3. Title: Add in stock product to cart(positive)
+
+Preconditions:
+* User should be logged into adnabu store
+* User is on adnabu store homepage
+
+Steps:
+When User clicks on search icon
+And User searches for "Multi-location Snowboard"
+Then User clicks on the search result "Multi-location Snowboard"
+And User clicks on add to cart button
+
+Expected:
+* Then card drawer should be opened
+* Then the product should be added to cart and the quantity shows 1
+
+=============================================================================================================
+4. Title: Invalid Product search(negative)
+
+Preconditions:
+* User should be logged into adnabu store
+* User is on adnabu store homepage
+
+Steps:
+When User clicks on search icon
+And User enters invalid product name "abcdefg" in the search bar
+And User again clicks on search icon
+
+Expected:
+Then error message "No results found for “abcdefg”. Check the spelling or use a different word or phrase." is displayed
+
+=============================================================================================================
+5. Title: Verify disabled sold out button(negative)
+
+Preconditions:
+* User should be logged into adnabu store
+* User is on adnabu store homepage
+* User should search for sold out product
+
+Steps:
+When User clicks on search icon
+And User searches for "Amazon sleeves tshirt"
+Then User clicks on the searched product "Amazon sleeves tshirt"
+And User verifies the Add to Cart button
+
+Expected:
+Then the Add to Cart button should be disabled
+
+=============================================================================================================
+6. Title: Buy it now on sold out product(edge case)
+
+Preconditions:
+* User should be logged into adnabu store
+* User is on adnabu store homepage
+* User should search for sold out product
+
+Steps:
+When User clicks on the searched sold out product "Amazon sleeves tshirt"
+And User clicks on Buy it now button
+
+Expected:
+* Then the Buy it now button should not be clickable
+* And User cannot purchase sold out product
+
+=============================================================================================================
