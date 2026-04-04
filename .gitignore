@@ -10,10 +10,6 @@ __pycache__/
 venv/
 env/
 
-# Test reports
-reports/
-*.html
-
 # OS files
 .DS_Store
 Thumbs.db
