@@ -13,3 +13,13 @@ env/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Temp files
+*.txt.bak
+$envJAVA_HOME*
+
+# Bat files
+run_tests.bat
+
+# Allure Reports
+reports/
