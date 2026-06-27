@@ -93,4 +93,44 @@ Expected:
 * Then the Buy it now button should not be clickable
 * And User cannot purchase sold out product
 
-=============================================================================================================
+=====================================================================================================
+1. Title: Search by entering spaces (negative)
+
+Preconditions:
+* User should be logged into adnabu store
+* User is on adnabu store homepage
+
+Steps:
+When User clicks on search icon
+And User enters spaces
+
+Expected:
+Then no products should appear in the search list
+Then User should get "no search results" error
+
+1. Title: Search by special characters (negative)
+
+Preconditions:
+* User should be logged into adnabu store
+* User is on adnabu store homepage
+
+Steps:
+When User clicks on search icon
+And User enters special characters "&*^"
+
+Expected:
+Then no products should appear in the search list
+Then User should get "no search results" error
+
+1. Title: Search by partial product name (positive)
+
+Preconditions:
+* User should be logged into adnabu store
+* User is on adnabu store homepage
+
+Steps:
+When User clicks on search icon
+And User enters partial product name and click on search icon
+
+Expected:
+All the products relevant to the search name should appear in the search list
