@@ -18,7 +18,10 @@ def before_scenario(context, scenario):
         service=Service(ChromeDriverManager().install()),
         options=options
     )
-    context.driver.maximize_window()
+    if os.getenv("CI"):
+        context.driver.set_window_size(1920, 1080)
+    else:
+        context.driver.maximize_window()
 
 def after_scenario(context, scenario):
     if scenario.status == "failed":
