@@ -30,4 +30,3 @@ def after_scenario(context, scenario):
         context.driver.save_screenshot(f"reports/screenshots/{screenshot_name}.png")
     context.driver.delete_all_cookies()
     context.driver.quit()
-    # quit
